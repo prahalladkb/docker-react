@@ -6,6 +6,9 @@ services:
 before_install:
   - docker build -t prahalladkb/docker-react -f Dockerfile.dev .
 
+script:
+ - docker run prahalladkb/docker-react npm run test
+
 deploy:
   provider: elasticbeanstalk
   region: "us-west-2"
@@ -17,4 +20,4 @@ deploy:
     branch: master
   access_key_id: $AWS_ACCESS_KEY
   secret_access_key:
-    secure: $AWS_SECRET_KEY
+    secure: "$AWS_SECRET_KEY"
