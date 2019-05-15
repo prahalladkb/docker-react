@@ -6,9 +6,6 @@ services:
 before_install:
   - docker build -t prahalladkb/docker-react -f Dockerfile.dev .
 
-script:
- - docker run prahalladkb/docker-react npm run test
-
 deploy:
   provider: elasticbeanstalk
   region: "us-west-2"
