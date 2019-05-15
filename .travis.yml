@@ -4,6 +4,7 @@ services:
   - docker
 
 before_install:
+  - gem install rake
   - docker build -t prahalladkb/docker-react -f Dockerfile.dev .
 
 deploy:
